@@ -5,54 +5,61 @@ import com.google.gson.annotations.SerializedName;
 public class LoginData {
 
 
-    @SerializedName("user_id")
-    private String userId;
-
-    @SerializedName("nama")
-    private String nama;
-
-    @SerializedName("username")
-    private String username;
-
-    @SerializedName("ni")
-    private String ni;
-
-    @SerializedName("alamat")
-    private String alamat;
-
-    public String getStatus() {
-        return status;
+    public String getId() {
+        return id;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    @SerializedName("status")
-    private String status;
+    @SerializedName("id")
+    private String id;
+    @SerializedName("is_active")
+    private String is_active;
+    @SerializedName("name")
+    private String name;
+    @SerializedName("email")
+    private String email;
+    @SerializedName("image")
+    private String image;
+    @SerializedName("password")
+    private String password;
+    @SerializedName("role_id")
+    private String role_id;
+    @SerializedName("date_created")
+    private String date_created;
 
-    public String getNama() {
-        return nama;
+    public String getIs_active() {
+        return is_active;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setIs_active(String is_active) {
+        this.is_active = is_active;
     }
 
-    public String getNi() {
-        return ni;
+    public String getName() {
+        return name;
     }
 
-    public void setNi(String ni) {
-        this.ni = ni;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAlamat() {
-        return alamat;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAlamat(String alamat) {
-        this.alamat = alamat;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getPassword() {
@@ -63,43 +70,19 @@ public class LoginData {
         this.password = password;
     }
 
-    public String getTelepon() {
-        return telepon;
+    public String getRole_id() {
+        return role_id;
     }
 
-    public void setTelepon(String telepon) {
-        this.telepon = telepon;
+    public void setRole_id(String role_id) {
+        this.role_id = role_id;
     }
 
-    @SerializedName("password")
-    private String password;
-
-    @SerializedName("telepon")
-    private String telepon;
-
-
-    public void setUserId(String userId){
-        this.userId = userId;
+    public String getDate_created() {
+        return date_created;
     }
 
-    public String getUserId(){
-        return userId;
+    public void setDate_created(String date_created) {
+        this.date_created = date_created;
     }
-
-    public void setName(String nama){
-        this.nama = nama;
-    }
-
-    public String getName(){
-        return nama;
-    }
-
-    public void setUsername(String username){
-        this.username = username;
-    }
-
-    public String getUsername(){
-        return username;
-    }
-
 }

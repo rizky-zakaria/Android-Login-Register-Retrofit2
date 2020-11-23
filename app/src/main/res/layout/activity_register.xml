@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="105dp"
             android:layout_marginLeft="30dp"
             android:textStyle="bold"
             android:id="@+id/tv_register"
@@ -34,9 +34,9 @@
 
             <EditText
                 android:maxLines="1"
-                android:id="@+id/tvusername"
+                android:id="@+id/tv_name"
                 android:textSize="18sp"
-                android:hint="Username"
+                android:hint="Full Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -56,75 +56,9 @@
 
             <EditText
                 android:maxLines="1"
-                android:id="@+id/tv_nama"
+                android:id="@+id/tv_email"
                 android:textSize="18sp"
-                android:hint="Nama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/tl_alamat"
-            android:layout_below="@id/tl_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:maxLines="2"
-                android:id="@+id/tv_alamat"
-                android:textSize="18sp"
-                android:hint="Alamat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/tl_status"
-            android:layout_below="@id/tl_alamat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:maxLines="1"
-                android:id="@+id/tv_status"
-                android:textSize="18sp"
-                android:hint="Status"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/tl_telepon"
-            android:layout_below="@id/tl_status"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:maxLines="1"
-                android:id="@+id/tv_telepon"
-                android:textSize="18sp"
-                android:hint="Telepon"
+                android:hint="Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -139,7 +73,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:id="@+id/tl_password"
-            android:layout_below="@id/tl_telepon"
+            android:layout_below="@id/tl_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

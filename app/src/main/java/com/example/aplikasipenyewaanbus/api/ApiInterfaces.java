@@ -11,21 +11,17 @@ import retrofit2.http.POST;
 public interface ApiInterfaces {
 
     @FormUrlEncoded
-    @POST("login.php")
+    @POST("Login")
     Call<Login> loginResponse(
-            @Field("username") String username,
-            @Field("password") String password,
-            @Field("status") String status
+            @Field("email") String email,
+            @Field("password") String password
     );
 
     @FormUrlEncoded
-    @POST("register.php")
+    @POST("Auth")
     Call<Register> postData(
-            @Field("username") String username,
-            @Field("nama") String nama,
-            @Field("alamat") String alamat,
-            @Field("status") String status,
-            @Field("telepon") String telepon,
+            @Field("name") String name,
+            @Field("email") String email,
             @Field("password") String password
     );
 

@@ -21,8 +21,8 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText etNi, etUsername, etNama, etAlamat, etStatus, etPassword, etTelepon;
-    private String ni, username, nama, alamat, status, password, telepon;
+    private EditText etName,etEmail, etPassword;
+    private String name, email, password;
     private Button add_user;
     ApiInterfaces apiInterface;
 
@@ -31,40 +31,27 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        etAlamat = findViewById(R.id.tv_alamat);
-        etNama = findViewById(R.id.tv_nama);
+        etEmail = findViewById(R.id.tv_email);
         etPassword = findViewById(R.id.tv_password);
-        etStatus = findViewById(R.id.tv_status);
-        etUsername = findViewById(R.id.tvusername);
-        etTelepon = findViewById(R.id.tv_telepon);
-
+        etName = findViewById(R.id.tv_name);
 
         add_user = findViewById(R.id.addUser);
         add_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                nama = etNama.getText().toString();
-                username = etUsername.getText().toString();
-                alamat = etAlamat.getText().toString();
-                telepon = etTelepon.getText().toString();
-                status = etStatus.getText().toString();
+                name = etName.getText().toString();
+                email = etEmail.getText().toString();
                 password = etPassword.getText().toString();
 
-                 if (username.equals("")){
-                    etUsername.setError("Masukan Username");
-                }else if (nama.equals("")){
-                    etNama.setError("Masukan Nama");
-                }else if (alamat.equals("")){
-                    etAlamat.setError("Masukan Username");
-                }else if (status.equals("")){
-                    etStatus.setError("Masukan Nama");
-                }else if (telepon.equals("")){
-                    etTelepon.setError("Masukan Username");
+                 if (name.equals("")){
+                    etName.setError("Masukan Username");
+                }else if (email.equals("")){
+                    etEmail.setError("Masukan Nama");
                 }else if (password.equals("")){
                     etPassword.setError("Masukan Nama");
                 }else {
-                    register(ni, username, nama, alamat, status, telepon, password);
+                    register(name, email, password);
                 }
             }
         });
@@ -72,15 +59,15 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    private void register(String ni, String username, String nama, String alamat, String status, String telepon, String password){
+    private void register(String name, String email, String password){
 
         apiInterface = ApiClient.getClient().create(ApiInterfaces.class);
-        Call<Register> call = apiInterface.postData(username, nama, alamat, status, telepon, password);
+        Call<Register> call = apiInterface.postData(name, email, password);
         call.enqueue(new Callback<Register>() {
             @Override
             public void onResponse(Call<Register> call, Response<Register> response) {
                 if (response.body() != null && response.isSuccessful() && response.body().isStatus()){
-                    Toast.makeText(getApplicationContext(), "Berhasil Mendaftarkan", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please Wait Activation by Admin", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 }else {
                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
